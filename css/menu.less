@@ -1,0 +1,104 @@
+.menu_container{
+    position: relative;
+    .menu_title{
+        position: fixed;
+        height:0.98rem ;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color:#202629 ;
+        z-index: 20;
+        .menu_logo{
+            float: left;
+            margin: 0.13rem 0 0 0.28rem;
+            img{
+                width: 1.59rem;
+                height: o.5rem;
+                display: block;
+            }
+        }
+        .attend{
+            float: right;
+            width: 1.4rem;
+            height: 0.51rem;
+            line-height: 0.51rem;
+            text-align: center;
+            font-size: 0.24rem;
+            border: 3px #ffe537 solid;
+            margin-top: 0.15rem;
+            margin-right: 0.5rem;
+            color: #fff;
+        }
+        .menu_switch{
+            float: right;
+            width: 0.44rem;
+            height: 0.02rem;
+            background-color: #fff;
+            margin-top: 0.5rem;
+            margin-right: 0.2rem;
+            transition: 0.5s;
+            &::before{
+                content: ""; 
+                height: 0.02rem;
+                display: block;
+                background-color: #fff;
+                margin-top: -0.08rem;
+                // width: 0.44rem;
+                transition: 0.5s;
+            }
+            &::after{
+                content: "";
+                height: 0.02rem;
+                display: block;
+                background-color: #fff;
+                margin-top: 0.14rem;
+                // width: 0.44rem;
+                transition: 0.5s;
+
+            }
+            &.menu_switch--expand{
+                background: transparent;
+                &::before{
+                    transform: rotate(45deg);
+                    margin-top: 0;
+                    background: #bc3129;
+                }
+                &::after{
+                    transform: rotate(-45deg);
+                    margin-top: -0.016rem;
+                     background: #bc3129;
+                }
+            }
+        }
+    }
+    .menu_nav{
+       position: fixed;
+       top: 0.98rem;
+       right: 0;
+       font-size: 0.3rem;
+       background-color: #1e1e1e;
+       text-align: center;
+       width:0;
+       height: 0;
+       opacity: 0;
+       transition: 0.5s;
+       z-index: 89;
+       li{
+           border-top: 1px solid #2c2c2c;
+           height: 1.36rem;
+           line-height: 1.36rem;
+           overflow: hidden;
+           color: #fff;
+           a{
+               color: #fff;
+               text-decoration: none;
+           }
+       }
+       &.menu_nav--expand{
+           width: 100%;
+           height:100%;
+           opacity: 1;
+       }
+
+    }
+}
